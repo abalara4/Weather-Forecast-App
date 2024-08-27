@@ -37,6 +37,7 @@ class WeatherService {
   private baseURL: string = '';
   private apiKey: string = ''
   private cityName: string = '';
+
   // TODO: Create fetchLocationData method
   private async fetchLocationData(query: string) {
     const response = await fetch(query);
@@ -90,6 +91,7 @@ class WeatherService {
     return forecastArray;
   }
   // TODO: Complete getWeatherForCity method
+
   async getWeatherForCity(city: string) {
     this.cityName = city;
     const coordinates = await this.fetchAndDestructureLocationData();
@@ -100,4 +102,4 @@ class WeatherService {
   }
 }
 
-export default new WeatherService();
+export default WeatherService;
